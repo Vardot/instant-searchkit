@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# InstantSearchKit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+InstantSearchKit is an Elasticsearch site search application and UI component that leverages powerful search libraries to provide a seamless search experience. This project integrates three key libraries:
 
-## Available Scripts
+- **Searchkit**: An open-source library designed to help you build an exceptional search experience with Elasticsearch. It supports various frameworks, including React, Vue, and Angular.
+- **Algolia InstantSearch.js with React**: An open-source UI library for React that enables the creation of sophisticated search interfaces in frontend applications, leveraging Algolia’s search technology.
+- **Elasticsearch Server**: A Drupal module that acts as a proxy to the Elasticsearch server, facilitating secure and efficient search operations. For more details, refer to the [Search API ElasticsearchKit Proxy module](https://www.drupal.org/project/search_api_elasticsearchkit_proxy).
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Searchkit
+- **Build Great Search Experiences**: Simplifies the creation of search interfaces by providing a range of UI components and integrations with Elasticsearch.
+- **Framework Compatibility**: Works with various frontend frameworks including React, Vue, and Angular, making it adaptable to different project needs.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Algolia InstantSearch.js with React
+- **UI Component Library**: Offers a set of customizable UI components for React, allowing you to build powerful search interfaces quickly.
+- **Real-time Search**: Supports real-time search and faceting, enhancing the user experience with instant search results.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Elasticsearch Server
+- **Search Proxy**: Acts as a proxy to the Elasticsearch server, ensuring secure and controlled access to search functionalities.
+- **Integration with Drupal**: Provides a robust integration with Drupal for managing Elasticsearch connections and configurations.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get started with InstantSearchKit, follow these steps:
 
-### `npm run build`
+### Prerequisites
+- Node.js and npm installed on your development machine.
+- A Drupal site with the [Search API ElasticsearchKit Proxy module](https://www.drupal.org/project/search_api_elasticsearchkit_proxy) installed and configured.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the Repository**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    git clone git@github.com:Vardot/instant-searchkit.git
+    cd instant-searchkit
+    ```
 
-### `npm run eject`
+2. **Install Dependencies**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ```bash
+    npm install
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Configure the Proxy**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    Ensure your Drupal site is configured with the Elasticsearch server proxy. You can find detailed instructions in the [Search API ElasticsearchKit Proxy documentation](https://www.drupal.org/project/search_api_elasticsearchkit_proxy).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. **Update Environment Variables**
 
-## Learn More
+    Create a `.env` file in the root of your project and add the necessary environment variables to connect to your Drupal site and Elasticsearch server.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```env
+    REACT_APP_ELASTICSEARCH_PROXY_URL=http://your-drupal-site.com/api/search
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Run the App**
+
+    Start the development server to see your app in action.
+
+    ```bash
+    npm run start:searchkit_app
+    ```
+
+6. **Build the App for Production**
+
+    When you’re ready to deploy, build the app using:
+
+    ```bash
+    npm run build:searchkit_app
+    ```
+
+## Usage
+
+To use the search features, integrate the Searchkit and Algolia InstantSearch components into your React application. For detailed usage and examples, refer to the documentation for [Searchkit](https://github.com/searchkit/searchkit), [Algolia InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react/), and the Elasticsearch Proxy.
+
+## Contributing
+
+We welcome contributions to InstantSearchKit! Please refer to our [contributing guidelines](CONTRIBUTING.md) for details on how to get involved.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
