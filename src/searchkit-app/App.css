@@ -64,15 +64,6 @@
   transition: border-color .35s ease-in-out, box-shadow .35s ease-in-out;
 }
 
-.open .rdrDateDisplayWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: auto;
-  width: 300px;
-  border-color: #242833;
-}
-
 @media (min-width: 768px) and (max-width: 991.98px) {
   .open .rdrDateDisplayWrapper {
     width: 210px;
@@ -98,6 +89,9 @@
   border-right: none;
 }
 
+.open.date-range-filter {
+  display: flex;
+}
 
 .rdrDefinedRangesWrapper {
   width: 195px;

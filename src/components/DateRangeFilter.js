@@ -1,5 +1,6 @@
 import React, { Component, createRef } from 'react';
 import { DateRange, DefinedRange } from 'react-date-range';
+import { initializeDatePicker } from './utils/useDatePicker';
 
 class DateRangeFilter extends Component {
   /**
@@ -33,6 +34,9 @@ class DateRangeFilter extends Component {
     const dateRangeFilterElement = this.dateRangeFilterRef.current;
 
     if (dateRangeFilterElement) {
+      // Initialize the date picker functionality.
+      initializeDatePicker();
+
       const monthsVerticalDiv = dateRangeFilterElement.querySelector('.rdrMonthsVertical');
 
       if (monthsVerticalDiv) {
