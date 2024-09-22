@@ -74,11 +74,3 @@ To get started with InstantSearchKit, follow these steps:
 ## Usage
 
 To use the search features, integrate the Searchkit and Algolia InstantSearch components into your React application. For detailed usage and examples, refer to the documentation for [Searchkit](https://github.com/searchkit/searchkit), [Algolia InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react/), and the Elasticsearch Proxy.
-
-## Contributing
-
-We welcome contributions to InstantSearchKit! Please refer to our [contributing guidelines](CONTRIBUTING.md) for details on how to get involved.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
