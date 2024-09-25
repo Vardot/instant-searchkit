@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a72361d9.css",
+    "main.js": "/static/js/main.b1a57680.js",
+    "static/media/calendar-primary.svg": "/static/media/calendar-primary.c3fbe7d9a86d0b512212.svg",
+    "static/media/no-results.svg": "/static/media/no-results.044cec28c08da5dce2a8.svg",
+    "index.html": "/index.html",
+    "static/media/grid-white.svg": "/static/media/grid-white.e57f93be59ecf8acb173.svg",
+    "static/media/grid-black.svg": "/static/media/grid-black.355aabdf62536fca8bb8.svg",
+    "static/media/table-white.svg": "/static/media/table-white.53b3152416157c38a49c.svg",
+    "static/media/table-black.svg": "/static/media/table-black.15379c2066cbb88da436.svg",
+    "main.a72361d9.css.map": "/static/css/main.a72361d9.css.map",
+    "main.b1a57680.js.map": "/static/js/main.b1a57680.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a72361d9.css",
+    "static/js/main.b1a57680.js"
+  ]
+}

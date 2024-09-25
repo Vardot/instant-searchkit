@@ -1,0 +1,125 @@
+
+.rdrDateRangeWrapper .rdrMonthAndYearWrapper,
+.rdrDateRangeWrapper .rdrMonthsVertical {
+  display: none;
+}
+
+.rdrDateRangeWrapper .rdrCalendarWrapper {
+  background-color: #fff;
+}
+
+.rdrDateInput {
+  width: 100%;
+  color: #242833;
+}
+
+.rdrDateDisplayItemActive input {
+  color: #242833;
+}
+
+.rdrDateDisplayWrapper {
+  position: relative;
+  background-color: #fff;
+  box-shadow: none;
+  border: 1px solid #adb5bd;
+  transition: border-color .35s ease-in-out, box-shadow .35s ease-in-out;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .open .rdrDateDisplayWrapper {
+    width: 210px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .open .rdrDateDisplayWrapper {
+    width: 205px;
+  }
+}
+
+.open .rdrDateDisplayItem.rdrDateDisplayItemActive {
+  border-color: #242833;
+}
+
+.open .rdrDateRangeWrapper,
+.open .rdrDefinedRangesWrapper {
+  border: 1px solid #e2e3e5;
+}
+
+.open .rdrDefinedRangesWrapper {
+  border-right: none;
+}
+
+.open.date-range-filter {
+  display: flex;
+}
+
+.rdrDefinedRangesWrapper {
+  width: 195px;
+  display: none;
+}
+
+.reset {
+  position: absolute;
+  top: 10px;
+  left: 300px;
+  width: 15px;
+  height: 30px;
+  z-index: 9;
+  background-color: transparent;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .reset {
+    left: 210px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .reset {
+    left: 205px;
+  }
+}
+
+.rdrDateDisplay .rdrDateDisplayItem {
+  width: 100px;
+}
+
+.rdrDateDisplayItem {
+  font-size: .875rem;
+  box-shadow: none;
+  border-color: transparent;
+  width: 100px;
+}
+
+.rdrDateDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .3125rem 20px .3125rem .833rem;
+}
+
+.rdrDateDisplay input::placeholder {
+  font-size: 1rem;
+  color: #242833;
+}
+
+.rdrDateDisplay::before {
+  content: "";
+  background-image: url(../../images/icons/calendar-primary.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.rdrDateDisplay .rdrDateInput:last-of-type::before {
+  content: "-";
+  margin-left: -13px;
+}
+
+.rdrCalendarWrapper {
+  z-index: 1;
+}

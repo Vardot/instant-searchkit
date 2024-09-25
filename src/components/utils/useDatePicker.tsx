@@ -1,3 +1,5 @@
+import './datePickerStyle.css';
+
 /**
  * Initializes and manages the behavior of a custom date picker.
  *
