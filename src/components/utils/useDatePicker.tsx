@@ -21,6 +21,11 @@
  *                     `MutationObserver` when no longer needed.
  */
 export const initializeDatePicker = () => {
+  // Function to reset date picker state on initialization
+  const resetDatePicker = () => {
+    hideDatePicker();
+  };
+
   // Function to show date picker elements.
   const showDatePicker = () => {
     const monthAndYearWrapper = document.querySelector(".rdrMonthAndYearWrapper") as HTMLElement;
@@ -32,8 +37,10 @@ export const initializeDatePicker = () => {
     if (monthAndYearWrapper) monthAndYearWrapper.style.display = "flex";
     if (monthsVertical) monthsVertical.style.display = "flex";
     if (definedRangesWrapper) definedRangesWrapper.style.display = "block";
-    if (closeButton) closeButton.style.display = "block !important";
-    if (dateRangeFilter) dateRangeFilter.classList.add("open");
+    if (closeButton) closeButton.style.display = "block";
+    if (dateRangeFilter && !dateRangeFilter.classList.contains("open")) {
+      dateRangeFilter.classList.add("open");
+    }
   };
 
   // Function to hide date picker elements
@@ -47,8 +54,10 @@ export const initializeDatePicker = () => {
     if (monthAndYearWrapper) monthAndYearWrapper.style.display = "none";
     if (monthsVertical) monthsVertical.style.display = "none";
     if (definedRangesWrapper) definedRangesWrapper.style.display = "none";
-    if (closeButton) closeButton.style.display = "none !important";
-    if (dateRangeFilter) dateRangeFilter.classList.remove("open");
+    if (closeButton) closeButton.style.display = "none";
+    if (dateRangeFilter && dateRangeFilter.classList.contains("open")) {
+      dateRangeFilter.classList.remove("open");
+    }
   };
 
   // Attach event listeners for date input and buttons
@@ -85,6 +94,9 @@ export const initializeDatePicker = () => {
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
+
+  // Ensure the date picker is reset when initializing
+  resetDatePicker();
 
   // Initial listener attachment
   attachListeners();
