@@ -90,20 +90,59 @@ export const initializeDatePicker = () => {
     });
   };
 
-  // MutationObserver to observe DOM changes and attach events when necessary
+  const accessibilityLabels = (): void => {
+    // Add aria-labels to the static range buttons
+    const staticRangeLabels = document.querySelectorAll<HTMLDivElement>('.rdrStaticRangeLabel');
+    staticRangeLabels.forEach((label) => {
+      const button = label.closest('button');
+      if (button) {
+        button.setAttribute('aria-label', label.textContent?.trim() || '');
+      }
+    });
+
+    const daysInputs = document.querySelectorAll<HTMLDivElement>('.rdrInputRangeInput');
+    daysInputs.forEach((dayInput) => {
+      const label = dayInput.nextSibling as HTMLInputElement;
+      if (label) {
+        dayInput.setAttribute('aria-label', label.textContent?.trim() || '');
+      }
+    });
+
+    // Add aria-labels to date inputs.
+    const dateInputs = document.querySelectorAll<HTMLInputElement>('.rdrDateInput input');
+    if (dateInputs.length >= 2) {
+      dateInputs[0].setAttribute('aria-label', 'From Date');
+      dateInputs[1].setAttribute('aria-label', 'To Date');
+    }
+
+    const prevButton = document.querySelector<HTMLDivElement>('.rdrPprevButton');
+    if (prevButton) {
+      prevButton.setAttribute('aria-label', 'Previous');
+    }
+
+    const nextButton = document.querySelector<HTMLDivElement>('.rdrNextButton');
+    if (nextButton) {
+      nextButton.setAttribute('aria-label', 'Next');
+    }
+  };
+
+  // MutationObserver to observe DOM changes and attach events when necessary.
   const observer = new MutationObserver(() => {
     attachListeners();
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
 
-  // Ensure the date picker is reset when initializing
+  // Ensure the date picker is reset when initializing.
   resetDatePicker();
 
-  // Initial listener attachment
+  // Add accessibility aria-labels.
+  accessibilityLabels();
+
+  // Initial listener attachment.
   attachListeners();
 
-  // Return a cleanup function
+  // Return a cleanup function.
   return () => {
     observer.disconnect();
     document.removeEventListener("mousedown", hideDatePicker);
