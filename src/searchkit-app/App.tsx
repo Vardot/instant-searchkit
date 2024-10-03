@@ -9,7 +9,6 @@ import {
   CurrentRefinements,
   Hits,
   InstantSearch,
-  Pagination,
   SearchBox,
   SortBy,
 } from "react-instantsearch";
@@ -24,6 +23,7 @@ import NoResultsBoundary from "../components/NoResultsBoundary";
 import ResultSwitcher from "../components/ResultSwitcher";
 import HitFeaturedCard from "../components/Hits/HitFeaturedCard";
 import FacetRefinementList from "../components/FacetRefinementList";
+import DynamicPagination from "../components/DynamicPagination";
 
 // This is the configuration for Searchkit, specifying the fields to attributes used for search, facets, etc.
 // @see https://www.searchkit.co/docs/overview
@@ -220,17 +220,7 @@ const App = () => {
                 />)}
               </NoResultsBoundary>
 
-              <Pagination
-                showLast={false}
-                showFirst={false}
-                padding={1}
-                classNames={{
-                  list: "pagination",
-                  item: "page-item",
-                  link: "page-link",
-                  selectedItem: "is-active active",
-                }}
-              />
+              <DynamicPagination padding={1} />
             </div>
           </div>
         </div>
