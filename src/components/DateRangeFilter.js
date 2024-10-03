@@ -44,6 +44,7 @@ class DateRangeFilter extends Component {
         const closeButton = document.createElement('button');
         closeButton.textContent = 'Close';
         closeButton.className = 'btn-close-date btn btn-outline-info btn-sm';
+        closeButton.ariaLabel = 'Close';
 
         // Append the button after the .rdrMonthsVertical div.
         monthsVerticalDiv.after(closeButton);

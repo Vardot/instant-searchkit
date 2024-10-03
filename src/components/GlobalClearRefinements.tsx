@@ -53,7 +53,7 @@ const GlobalClearRefinements: React.FC<GlobalClearRefinementsProps> = ({ buttonT
 
   return (
     <div className='clear-refinements'>
-      <button className={className ?? 'clear btn btn-outline-secondary'} disabled={disabled} onClick={handleClick}>
+      <button className={className ?? 'clear btn btn-outline-secondary'} aria-label={'clear filters'} disabled={disabled} onClick={handleClick}>
         {buttonText ?? 'Clear Filters'}
       </button>
     </div>
